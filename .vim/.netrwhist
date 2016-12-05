@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/javier/.i3'
+let g:netrw_dirhist_2='/home/javier/workspace.kds/sgl5000-bringup/kds'
+let g:netrw_dirhist_3='/home/javier/dev/kicadlib/muchi_footprints.pretty'
+let g:netrw_dirhist_4='/home/javier/.i3'
