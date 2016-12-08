@@ -1,3 +1,4 @@
+syntax on
 set modeline
 set exrc
 call pathogen#infect()
