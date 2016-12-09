@@ -5,6 +5,9 @@ do
 	[ -f ${file} ] && ln -sfv ${PWD}/${file} ~
 done
 
+rm -fr ~/.vim
+ln -sfv ${PWD}/.vim ~
+
 echo
 echo =========================================
 echo Now add the following line to your .bashrc
