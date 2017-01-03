@@ -2,13 +2,13 @@ set history save
 set history filename ~/.gdb_history
 
 define reconnect
-    target remote :3333
+   target remote :3333
 end
 
 define reload
-    mon reset halt
+    mon reset
     make
     load
-    mon reset init
+    mon reset
     continue
 end
