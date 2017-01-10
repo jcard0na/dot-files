@@ -93,8 +93,9 @@ define kl27_dump
     printf "SPI0_MH:    \t0x%02x\n", *((uint8_t *)0x40076005)
     printf "SPI0_DL:    \t0x%02x\n", *((uint8_t *)0x40076006)
     printf "SPI0_DH:    \t0x%02x\n", *((uint8_t *)0x40076007)
-    printf "SPI0_CI:    \t0x%02x\n", *((uint8_t *)0x4007600A)
-    printf "SPI0_C3:    \t0x%02x\n", *((uint8_t *)0x4007600B)
+# No FIFO for SPI0 on kl27
+#    printf "SPI0_CI:    \t0x%02x\n", *((uint8_t *)0x4007600A)
+#    printf "SPI0_C3:    \t0x%02x\n", *((uint8_t *)0x4007600B)
     printf "SPI1_S:    \t0x%02x\n", *((uint8_t *)0x40077000)
     printf "SPI1_BR:    \t0x%02x\n", *((uint8_t *)0x40077001)
     printf "SPI1_C2:    \t0x%02x\n", *((uint8_t *)0x40077002)
@@ -117,4 +118,31 @@ define kl27_dump
     printf "OSC\n"
     printf "OSC0_CR:\t0x%02x\n", *((uint8_t *)0x40065000)
     printf "\n\n"
+
+    printf "DMAMUX0\n"
+    printf "DMAMUX0_CHCFG0:  \t0x%02x\n", *((uint8_t *)0x40021000)
+    printf "DMAMUX0_CHCFG1:  \t0x%02x\n", *((uint8_t *)0x40021001)
+    printf "DMAMUX0_CHCFG2:  \t0x%02x\n", *((uint8_t *)0x40021002)
+    printf "DMAMUX0_CHCFG3:  \t0x%02x\n", *((uint8_t *)0x40021003)
+    printf "\n\n"
+
+
+    printf "DMA\n"
+
+    printf "DMA_SAR0:  \t0x%02x\n", *((uint8_t *)0x40008100)
+    printf "DMA_DAR0:  \t0x%02x\n", *((uint8_t *)0x40008104)
+    printf "DMA_BCR0:  \t0x%02x\n", *((uint8_t *)0x40008108)
+    printf "DMA_DCR0:  \t0x%02x\n", *((uint8_t *)0x4000810C)
+    printf "DMA_SAR1:  \t0x%02x\n", *((uint8_t *)0x40008110)
+    printf "DMA_DAR1:  \t0x%02x\n", *((uint8_t *)0x40008114)
+    printf "DMA_BCR1:  \t0x%02x\n", *((uint8_t *)0x40008118)
+    printf "DMA_DCR1:  \t0x%02x\n", *((uint8_t *)0x4000811C)
+    printf "DMA_SAR2:  \t0x%02x\n", *((uint8_t *)0x40008120)
+    printf "DMA_DAR2:  \t0x%02x\n", *((uint8_t *)0x40008124)
+    printf "DMA_BCR2:  \t0x%02x\n", *((uint8_t *)0x40008128)
+    printf "DMA_DCR2:  \t0x%02x\n", *((uint8_t *)0x4000812C)
+    printf "DMA_SAR3:  \t0x%02x\n", *((uint8_t *)0x40008130)
+    printf "DMA_DAR3:  \t0x%02x\n", *((uint8_t *)0x40008134)
+    printf "DMA_BCR3:  \t0x%02x\n", *((uint8_t *)0x40008138)
+    printf "DMA_DCR3:  \t0x%02x\n", *((uint8_t *)0x4000813C)
 end 
