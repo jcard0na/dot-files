@@ -67,21 +67,21 @@ define kl27_dump
 #     printf "\n\n"
 
     printf "I2S0\n"
-    printf "I2S0_TCSR:\t0x%02x\n", *((uint8_t *)0x4002F000)
-    printf "I2S0_TCR2:\t0x%02x\n", *((uint8_t *)0x4002F008)
-    printf "I2S0_TCR3:\t0x%02x\n", *((uint8_t *)0x4002F00C)
-    printf "I2S0_TCR4:\t0x%02x\n", *((uint8_t *)0x4002F010)
-    printf "I2S0_TCR5:\t0x%02x\n", *((uint8_t *)0x4002F014)
-    printf "I2S0_TDR0:\t0x%02x\n", *((uint8_t *)0x4002F020)
-    printf "I2S0_TMR:\t0x%02x\n", *((uint8_t *)0x4002F060)
-    printf "I2S0_RCSR:\t0x%02x\n", *((uint8_t *)0x4002F080)
-    printf "I2S0_RCR2:\t0x%02x\n", *((uint8_t *)0x4002F088)
-    printf "I2S0_RCR3:\t0x%02x\n", *((uint8_t *)0x4002F08C)
-    printf "I2S0_RCR4:\t0x%02x\n", *((uint8_t *)0x4002F090)
-    printf "I2S0_RCR5:\t0x%02x\n", *((uint8_t *)0x4002F094)
-    printf "I2S0_RDR0:\t0x%02x\n", *((uint8_t *)0x4002F0A0)
-    printf "I2S0_RMR:\t0x%02x\n", *((uint8_t *)0x4002F0E0)
-    printf "I2S0_MCR:\t0x%02x\n", *((uint8_t *)0x4002F100)
+    printf "I2S0_TCSR:\t0x%08x\n", *((uint32_t *)0x4002F000)
+    printf "I2S0_TCR2:\t0x%08x\n", *((uint32_t *)0x4002F008)
+    printf "I2S0_TCR3:\t0x%08x\n", *((uint32_t *)0x4002F00C)
+    printf "I2S0_TCR4:\t0x%08x\n", *((uint32_t *)0x4002F010)
+    printf "I2S0_TCR5:\t0x%08x\n", *((uint32_t *)0x4002F014)
+    printf "I2S0_TDR0:\t0x%08x\n", *((uint32_t *)0x4002F020)
+    printf "I2S0_TMR:\t0x%08x\n", *((uint32_t *)0x4002F060)
+    printf "I2S0_RCSR:\t0x%08x\n", *((uint32_t *)0x4002F080)
+    printf "I2S0_RCR2:\t0x%08x\n", *((uint32_t *)0x4002F088)
+    printf "I2S0_RCR3:\t0x%08x\n", *((uint32_t *)0x4002F08C)
+    printf "I2S0_RCR4:\t0x%08x\n", *((uint32_t *)0x4002F090)
+    printf "I2S0_RCR5:\t0x%08x\n", *((uint32_t *)0x4002F094)
+    printf "I2S0_RDR0:\t0x%08x\n", *((uint32_t *)0x4002F0A0)
+    printf "I2S0_RMR:\t0x%08x\n", *((uint32_t *)0x4002F0E0)
+    printf "I2S0_MCR:\t0x%08x\n", *((uint32_t *)0x4002F100)
     printf "\n\n"
 
     printf "SPI\n"
@@ -106,6 +106,7 @@ define kl27_dump
     printf "SPI1_DH:    \t0x%02x\n", *((uint8_t *)0x40077007)
     printf "SPI1_CI:    \t0x%02x\n", *((uint8_t *)0x4007700A)
     printf "SPI1_C3:    \t0x%02x\n", *((uint8_t *)0x4007700B)
+    printf "\n\n"
     
     printf "MCG\n"
     printf "MCG_C1:  \t0x%02x\n", *((uint8_t *)0x40064000)
@@ -128,21 +129,20 @@ define kl27_dump
 
 
     printf "DMA\n"
-
-    printf "DMA_SAR0:  \t0x%02x\n", *((uint8_t *)0x40008100)
-    printf "DMA_DAR0:  \t0x%02x\n", *((uint8_t *)0x40008104)
-    printf "DMA_BCR0:  \t0x%02x\n", *((uint8_t *)0x40008108)
-    printf "DMA_DCR0:  \t0x%02x\n", *((uint8_t *)0x4000810C)
-    printf "DMA_SAR1:  \t0x%02x\n", *((uint8_t *)0x40008110)
-    printf "DMA_DAR1:  \t0x%02x\n", *((uint8_t *)0x40008114)
-    printf "DMA_BCR1:  \t0x%02x\n", *((uint8_t *)0x40008118)
-    printf "DMA_DCR1:  \t0x%02x\n", *((uint8_t *)0x4000811C)
-    printf "DMA_SAR2:  \t0x%02x\n", *((uint8_t *)0x40008120)
-    printf "DMA_DAR2:  \t0x%02x\n", *((uint8_t *)0x40008124)
-    printf "DMA_BCR2:  \t0x%02x\n", *((uint8_t *)0x40008128)
-    printf "DMA_DCR2:  \t0x%02x\n", *((uint8_t *)0x4000812C)
-    printf "DMA_SAR3:  \t0x%02x\n", *((uint8_t *)0x40008130)
-    printf "DMA_DAR3:  \t0x%02x\n", *((uint8_t *)0x40008134)
-    printf "DMA_BCR3:  \t0x%02x\n", *((uint8_t *)0x40008138)
-    printf "DMA_DCR3:  \t0x%02x\n", *((uint8_t *)0x4000813C)
+    printf "DMA_SAR0:  \t0x%08x\n", *((uint32_t *)0x40008100)
+    printf "DMA_DAR0:  \t0x%08x\n", *((uint32_t *)0x40008104)
+    printf "DMA_BCR0:  \t0x%08x\n", *((uint32_t *)0x40008108)
+    printf "DMA_DCR0:  \t0x%08x\n", *((uint32_t *)0x4000810C)
+    printf "DMA_SAR1:  \t0x%08x\n", *((uint32_t *)0x40008110)
+    printf "DMA_DAR1:  \t0x%08x\n", *((uint32_t *)0x40008114)
+    printf "DMA_BCR1:  \t0x%08x\n", *((uint32_t *)0x40008118)
+    printf "DMA_DCR1:  \t0x%08x\n", *((uint32_t *)0x4000811C)
+    printf "DMA_SAR2:  \t0x%08x\n", *((uint32_t *)0x40008120)
+    printf "DMA_DAR2:  \t0x%08x\n", *((uint32_t *)0x40008124)
+    printf "DMA_BCR2:  \t0x%08x\n", *((uint32_t *)0x40008128)
+    printf "DMA_DCR2:  \t0x%08x\n", *((uint32_t *)0x4000812C)
+    printf "DMA_SAR3:  \t0x%08x\n", *((uint32_t *)0x40008130)
+    printf "DMA_DAR3:  \t0x%08x\n", *((uint32_t *)0x40008134)
+    printf "DMA_BCR3:  \t0x%08x\n", *((uint32_t *)0x40008138)
+    printf "DMA_DCR3:  \t0x%08x\n", *((uint32_t *)0x4000813C)
 end 
