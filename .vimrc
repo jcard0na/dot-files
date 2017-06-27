@@ -91,3 +91,6 @@ if exists("+showtabline")
     set showtabline=1
     highlight link TabNum Special
 endif
+
+" Remove trailing spaces
+autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
