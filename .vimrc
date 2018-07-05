@@ -35,15 +35,26 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " Sensible formatting defaults 
 " use clang-format for project specific settings
-set et ts=4 sw=4 cindent cinoptions=:0,l1,t0,g0,(0
+set et ts=4 sw=4
 
 " tab navigation shortcuts
 nnoremap th  :tabprev<CR>
 nnoremap tj  :tabprev<CR>
 nnoremap tk  :tabnext<CR>
 nnoremap tl  :tabprev<CR>
+
 nnoremap tt  :tabedit<Space>
 nnoremap td  :tabclose<CR>
+
+" Action items are lines that with a prefix of '[ ]'
+" ac: creates an action item by adding prefix
+" ad: marks action item as done
+" au: unmarks action item as done
+" af: jumps to the next action item on the file
+nnoremap ac :.s/^ *[^\[]/[ ] &/<CR>
+nnoremap ad :.s/\[ \]/[x]/<CR>
+nnoremap au :.s/\[.\]/[ ]/<CR>
+nnoremap af /^\[ \]<CR>
 
 " Rename tabs to show tab number, so it is easy to jump to a particular tab
 " with gt, e.g. 5gt
@@ -94,3 +105,5 @@ endif
 
 " Remove trailing spaces
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+
+:set printoptions=formfeed:y
