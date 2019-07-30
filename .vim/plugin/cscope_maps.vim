@@ -39,6 +39,11 @@ if has("cscope")
 
     " add any cscope database in current directory
     if filereadable("cscope.out")
+        " When vim is launched from cscope, the db will already be loaded, and
+        " cs add cscope.out fails, interrupting the load of the plugin.
+        " That results in the key mappings not loading, which sucks.
+        " Prevent that by silencing the error
+        set nocscopeverbose
         cs add cscope.out  
     " else add the database pointed to by environment variable 
     elseif $CSCOPE_DB != ""
