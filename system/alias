@@ -1,1 +1,1 @@
-eval "$(fasd --init auto)"
+echo nothing
