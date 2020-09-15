@@ -7,14 +7,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kana/vim-operator-user'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'jceb/vim-orgmode'
+Plugin 'kana/vim-operator-user'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tlib_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -102,6 +107,14 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
     set showtabline=1
     highlight link TabNum Special
+endif
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
 endif
 
 " Remove trailing spaces
