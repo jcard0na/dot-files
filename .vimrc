@@ -33,6 +33,8 @@ nmap <F5> <Plug>(lcn-menu)
 nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> <F2> <Plug>(lcn-rename)
+filetype plugin on
+setlocal omnifunc=LanguageClient#complete
 " End of LanguageClient configuration ==
 
 syntax on
