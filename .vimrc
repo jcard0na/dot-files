@@ -131,3 +131,4 @@ set path+=**
 set wildmenu
 
 colo gruvbox
+set bg=dark
