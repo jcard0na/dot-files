@@ -130,4 +130,4 @@ set printoptions=formfeed:y
 set path+=**
 set wildmenu
 
-colo elflord
+colo gruvbox
