@@ -14,7 +14,3 @@ echo Now add the following line to your .bashrc
 echo
 echo   'for DOTFILE in ~/dot-files/system/*; do [ -f ${DOTFILE} ] && source ${DOTFILE}; done'
 echo
-echo And next time you fire vim, run
-echo
-echo :PluginInstall
-echo

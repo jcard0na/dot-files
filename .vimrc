@@ -1,23 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-call plug#begin('~/.vim/plugged')
-
-Plug 'rhysd/vim-clang-format'
-Plug 'scrooloose/nerdcommenter'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-" (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
-
-" All of your Plugins must be added before the following line
-call plug#end()              " required
-
-
 " LanguageClient configuration ==
 " Required for operations modifying multiple buffers like rename.
 set hidden
